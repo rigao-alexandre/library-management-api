@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 
 import { BooksModule } from './books/books.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { MembersModule } from './members/members.module';
 import config from './core/orm.config';
 
 @Module({
-  imports: [SequelizeModule.forRoot(config), BooksModule],
+  imports: [SequelizeModule.forRoot(config), BooksModule, MembersModule],
   // controllers: [AppController],
   // providers: [AppService],
 })
