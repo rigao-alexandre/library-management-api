@@ -6,7 +6,7 @@ export class Member extends Model<Member> {
     type: DataType.STRING,
     allowNull: false,
   })
-  full_name: string;
+  fullName: string;
 
   @Column({
     type: DataType.STRING,
