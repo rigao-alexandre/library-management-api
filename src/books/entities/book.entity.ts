@@ -1,4 +1,14 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import {
+  BelongsTo,
+  Column,
+  DataType,
+  ForeignKey,
+  HasMany,
+  Model,
+  Table,
+} from 'sequelize-typescript';
+import { History } from 'src/history/entities/history.entity';
+import { Member } from 'src/members/entities/member.entity';
 
 @Table
 export class Book extends Model<Book> {
@@ -26,4 +36,30 @@ export class Book extends Model<Book> {
     allowNull: false,
   })
   description: string;
+
+  @Column({
+    type: DataType.ENUM,
+    values: ['CHECKED IN', 'CHECKED OUT'],
+    allowNull: false,
+    defaultValue: 'CHECKED IN',
+  })
+  status: 'CHECKED IN' | 'CHECKED OUT';
+
+  @ForeignKey(() => Member)
+  @Column({
+    allowNull: true,
+  })
+  memberId?: number | null | undefined;
+
+  @BelongsTo(() => Member)
+  member?: Member | null | undefined;
+
+  @Column({
+    type: DataType.DATEONLY,
+    allowNull: true,
+  })
+  dueDate?: string | null | undefined;
+
+  @HasMany(() => History)
+  history: History[];
 }

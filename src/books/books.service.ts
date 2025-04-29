@@ -3,6 +3,7 @@ import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { Book } from './entities/book.entity';
 import { InjectModel } from '@nestjs/sequelize';
+import { CheckOutBookDto } from './dto/check-out-book.dto';
 
 @Injectable()
 export class BooksService {
@@ -43,6 +44,32 @@ export class BooksService {
           id,
         },
       })) === 1
+    );
+  }
+
+  async checkOut(id: number, checkOutBook: CheckOutBookDto) {
+    return this.bookModel.update(
+      {
+        memberId: checkOutBook.memberId,
+        dueDate: checkOutBook.dueDate,
+        status: 'CHECKED OUT',
+      },
+      {
+        where: { id },
+      },
+    );
+  }
+
+  async checkIn(id: number) {
+    return this.bookModel.update(
+      {
+        memberId: null,
+        dueDate: null,
+        status: 'CHECKED IN',
+      },
+      {
+        where: { id },
+      },
     );
   }
 }
