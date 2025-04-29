@@ -9,5 +9,6 @@ import { HistoryModule } from 'src/history/history.module';
   imports: [SequelizeModule.forFeature([Book]), HistoryModule],
   controllers: [BooksController],
   providers: [BooksService],
+  exports: [BooksService],
 })
 export class BooksModule {}
