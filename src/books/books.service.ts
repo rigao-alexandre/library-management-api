@@ -12,11 +12,11 @@ export class BooksService {
     private bookModel: typeof Book,
   ) {}
 
-  async create(createBookDto: CreateBookDto) {
+  create(createBookDto: CreateBookDto) {
     return this.bookModel.create(createBookDto);
   }
 
-  async findAll(): Promise<Book[]> {
+  findAll() {
     return this.bookModel.findAll();
   }
 
@@ -36,15 +36,12 @@ export class BooksService {
     });
   }
 
-  async remove(id: number): Promise<boolean> {
-    // TODO: add soft deletes
-    return (
-      (await this.bookModel.destroy({
-        where: {
-          id,
-        },
-      })) === 1
-    );
+  async remove(id: number) {
+    await this.bookModel.destroy({
+      where: {
+        id,
+      },
+    });
   }
 
   async checkOut(id: number, checkOutBook: CheckOutBookDto) {
