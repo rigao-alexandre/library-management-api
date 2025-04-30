@@ -26,7 +26,7 @@ API for Library Management
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -63,6 +63,8 @@ _Please refer to the Swagger docs generated and available in `http://localhost:3
 - [ ] Soft deletes
 - [ ] Filters
 - [ ] Pagination
+- [ ] Wait list
+- [ ] Notification (remimders, availability, etc)
 
 ### Security
 
