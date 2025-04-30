@@ -70,7 +70,8 @@ _Please refer to the Swagger docs generated and available in `http://localhost:3
 - [ ] Soft deletes
 - [ ] Filters
 - [ ] Pagination
-- [ ] Wait list
+- [ ] Wait list / Hold
+- [ ] Next books recomendation
 - [ ] Notification (remimders, availability, etc)
 
 ### Security
@@ -82,7 +83,7 @@ _Please refer to the Swagger docs generated and available in `http://localhost:3
 
 ### Architecture
 
-- [ ] Migrate to another database
+- [ ] Migrate to a proper database (MySQL (or similar) or PostgreSQL, for instance)
 
 ### Documentation
 
