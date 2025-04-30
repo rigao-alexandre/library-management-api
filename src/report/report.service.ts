@@ -80,7 +80,7 @@ export class ReportService {
       group: ['memberId', 'event'],
       include: [{ model: Member, required: true }],
       order: [['total', 'DESC']],
-      limit: 10,
+      limit: 5,
     });
   }
 
@@ -100,7 +100,7 @@ export class ReportService {
       group: ['bookId', 'event'],
       include: [{ model: Book, required: true }],
       order: [['total', 'DESC']],
-      limit: 5,
+      limit: 10,
     });
   }
 
