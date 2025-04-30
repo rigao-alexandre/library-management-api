@@ -46,6 +46,13 @@ To get a local copy up and running follow these simple steps.
 yarn start
 ```
 
+### Testing
+
+```sh
+yarn test -i ./src/books/books.controller.spec.ts
+yarn test -i ./src/books/books.service.spec.ts
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
