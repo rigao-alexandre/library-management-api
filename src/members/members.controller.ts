@@ -1,8 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { MembersService } from './members.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Member } from './entities/member.entity';
 
+@ApiTags('Member')
 @Controller('members')
 export class MembersController {
   constructor(private readonly membersService: MembersService) {}
@@ -12,6 +23,11 @@ export class MembersController {
     return this.membersService.create(createMemberDto);
   }
 
+  @ApiResponse({
+    status: 200,
+    description: 'List of records',
+    type: [Member],
+  })
   @Get()
   findAll() {
     return this.membersService.findAll();

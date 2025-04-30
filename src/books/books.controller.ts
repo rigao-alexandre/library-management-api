@@ -13,7 +13,9 @@ import { UpdateBookDto } from './dto/update-book.dto';
 import { HistoryService } from 'src/history/history.service';
 import { CheckOutBookDto } from './dto/check-out-book.dto';
 import { Event } from 'src/history/entities/history.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Book')
 @Controller('books')
 export class BooksController {
   constructor(

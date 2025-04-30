@@ -20,10 +20,10 @@ export class HistoryController {
     return this.historyService.create(createHistoryDto);
   }
 
-  @Get()
-  findAll() {
-    return this.historyService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.historyService.findAll();
+  // }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
