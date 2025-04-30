@@ -2,7 +2,7 @@
 
 ## About The Project
 
-API for the Library Management
+API for Library Management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -50,6 +50,8 @@ yarn start
 
 ## Usage
 
+_Please refer to the Swagger docs generated and available in `http://localhost:3000/docs`_
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
@@ -67,6 +69,7 @@ yarn start
 - [ ] Protect endpoints
 - [ ] Improve payload validation
 - [ ] Expose "public" IDs (UUIDs or similar)
+- [ ] Migrate configuration to `.env` files
 
 ### Architecture
 
